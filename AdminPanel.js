@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 
 const AdminPanel = () => {
   const [results, setResults] = useState([]);
@@ -138,45 +138,4 @@ const AdminPanel = () => {
       <div style={{marginTop:'20px', textAlign:'center'}}>
         <p>Savollar soni: <b>{test.questions.length} ta</b></p>
         <button onClick={uploadTest} style={{...sBtn, background:'#3498db', width:'100%', padding:'15px'}}>🚀 TESTNI SAQLASH</button>
-      </div>
-
-      <div style={{ marginTop: '50px', borderTop: '3px solid #3498db', paddingTop: '20px' }}>
-        <h2>📊 O'quvchilar Natijalari</h2>
-        <button onClick={getStudentResults} style={{ padding: '10px 20px', background: '#f39c12', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer', marginBottom: '15px' }}>
-          🔄 Yangilash
-        </button>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-          <thead>
-            <tr style={{ background: '#34495e', color: 'white' }}>
-              <th style={tableStyle}>ID</th>
-              <th style={tableStyle}>O'quvchi</th>
-              <th style={tableStyle}>Fan</th>
-              <th style={tableStyle}>Ball</th>
-              <th style={tableStyle}>Sana</th>
-            </tr>
-          </thead>
-          <tbody>
-            {results.length > 0 ? results.map((r, i) => (
-              <tr key={i}>
-                <td style={tableStyle}>{r.id}</td>
-                <td style={tableStyle}>{r.name}</td>
-                <td style={tableStyle}>{r.subject}</td>
-                <td style={tableStyle}>{r.score}</td>
-                <td style={tableStyle}>{r.date}</td>
-              </tr>
-            )) : (
-              <tr><td colSpan="5" style={{ textAlign: 'center', padding: '10px' }}>Natijalar yo'q</td></tr>
-            )}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-};
-
-// --- STYLES ---
-const sInp = { display:'block', margin:'10px 0', padding:'12px', width:'100%', borderRadius:'5px', border:'1px solid #ccc', boxSizing:'border-box' };
-const sBtn = { padding:'12px 40px', background:'#007bff', color:'white', border:'none', borderRadius:'5px', cursor:'pointer', fontWeight:'bold' };
-const tableStyle = { border: '1px solid #ddd', padding: '12px', textAlign: 'left' };
-
-export default AdminPanel;
+      </div>﻿
